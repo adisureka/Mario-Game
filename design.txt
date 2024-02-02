@@ -1,0 +1,48 @@
+design.txt
+
+File name LogicList.py  -> the text-game-part
+
+This is the backend part of the file, the program design an object 
+and within the object we have a "master_list", master list is a 1d list
+however if we use __str__ to  print it out, it will be like
+
+<backend list>
+[
+   1   2   3   4
+   5   6   7   8
+   9  10  11  12
+  13  14  15  16
+                  ]
+
+[
+   8   3   2  13
+  10   9  12  16
+  14   1   6  11
+   4  15   7   5
+                  ]
+
+No 16 will be the blank tile, only the number around 16 can be switched.
+To WIN the game, player should move until match the initial stage
+#=========================================================================
+
+File name puzzle_game.py
+
+This is the GUI file using turtle, the program creates a Control Turtle that does the
+following:
+1. It creates data structures, including the preceding logicList
+2. It listens to the action of the mouse clicking
+3. It reads the file and create the dict for the frame
+
+The program uses a turtle dictionary to match the preceding list, one item in the
+dictionary will be:
+
+{15: [15, <turtle.Turtle object at 0x7ff4a96107f0>, (-360, 320)]}
+
+In this example, 15 is the preceding list item, and then a turtle object
+the third element will be the position of this turtle
+The program pastes the pic on each turtle, and each turtle matches an element of the
+list, when you move the turtle, the list is changed correspondingly
+
+#============================================================================
+File name frame.py
+This file create a FrameTurle draw the initial Frame
